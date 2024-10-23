@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
-
+"""
+Redis module
+"""
+import sys
 from typing import Callable, Optional, Union
 from uuid import uuid4
-import redis
 from functools import wraps
 
-'''
-    Writing strings to Redis.
-'''
-
+import redis
 
 def count_calls(method: Callable) -> Callable:
     '''
-        Counts the number of times a method is called.
+        Counts the number of times a method has been called.
     '''
 
     @wraps(method)
